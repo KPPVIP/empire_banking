@@ -1,0 +1,66 @@
+<html lang="en">
+    <head>
+        <title>by oxince</title>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" id="applicationStylesheet" type="text/css" href="assets/css/stylesheet.css">
+        
+        <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+        <script type="text/javascript" src="assets/js/rescale.js"></script>
+        <script type="text/javascript" src="assets/js/nui.js"></script>
+    </head>
+
+    <body>
+        <div id="empire">
+            <div class="empireBanking">
+                <img draggable="false" class="empireCardImage" src="./assets/img/card.png">
+
+                <div class="empireCard">
+                    <div class="empireCardInformation">
+                        <a id="cardNumber">4222 2222 2222 2222</a><br>
+                        <a class="cardLighter" id="cardOwner" style="font-size: 13px; text-transform: uppercase;">CARLOS GAMBINO</a> <br>
+                        <a class="cardLighter" style="line-height: 130px; margin-top: 60px; font-size: 12px;">05/27</a>
+                    </div>
+                </div>
+
+                <div class="empireGraph">
+                    <div class="graphBalance" id="walletBalance">KONTOSTAND: <a style="color: #FF9B0F;">1.000.000$</a></div>
+                    <img draggable="false" src="./assets/img/graph.png">                    
+                </div>
+
+                <div class="empireInteractions">
+                    <div class="interactionItem">
+                        <div class="interactionTitle">GELD EINZAHLEN</div>
+                        <input class="interactionInput" id="depositAmount" onkeypress="return isNumberKey(event)" placeholder="0$"></input>
+                        <div class="interactionButton" id="deposit">WÄHLEN</div>
+                    </div>
+
+                    <div class="interactionItem">
+                        <div class="interactionTitle">GELD ABHEBEN</div>
+                        <input class="interactionInput" id="withdrawAmount" onkeypress="return isNumberKey(event)" placeholder="0$"></input>
+                        <div class="interactionButton" id="withdraw">WÄHLEN</div>
+                    </div>
+
+                    <div class="interactionItem">
+                        <div class="interactionTitle">GELD ÜBERWEISEN</div>
+                        <input class="interactionInput smallInput" id="transferAmount" onkeypress="return isNumberKey(event)" placeholder="0$"></input>
+                        <input class="interactionInput smallInput" id="transferId" onkeypress="return isNumberKey(event)" placeholder="ID"></input>
+                        <div class="interactionButton" id="transfer">WÄHLEN</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            function isNumberKey(evt){
+                var charCode = (evt.which) ? evt.which : evt.keyCode
+                if (charCode > 31 && (charCode < 48 || charCode > 57))
+                    return false;
+                return true;
+            }
+        </script>
+    </body>
+</html>
